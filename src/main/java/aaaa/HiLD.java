@@ -1,5 +1,6 @@
 package aaaa;
 
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -11,12 +12,17 @@ import java.lang.reflect.Method;
 
 import javase.A;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+
 public class HiLD {
 public static void main(String[] args) throws NoSuchMethodException, SecurityException {
 	System.out.println("你好，死胖子");
 	System.out.println("SSH");
 	System.out.println("ni ge bitch");
-
+	trimSpace("");
 	System.out.println("请写一个工具类，实现‘去掉字符串中所有的空格’，不借助trim()方法");
 
 
@@ -34,10 +40,25 @@ public static void main(String[] args) throws NoSuchMethodException, SecurityExc
 }
 
 	public static void trimSpace(String s){
-		 s ="sb s n ";
-		 String[] split = s.split(" ");
-		 String s1 = split[0]+split[1]+split[2];
-		 System.out.println(s1);
+		 String[] strs1 = s.split(" ");
+		 StringBuilder sb = new StringBuilder();
+         for (String str : strs1) {
+        	 sb.append(str);
+		}      
+         s = sb.toString();
+         String[] strs2 =s.split("　");
+         sb.delete(0, sb.length());
+         for (String str : strs2) {
+        	 sb.append(str);
+		}
+         s = sb.toString();
+         String[] strs3 =s.split("	");
+         sb.delete(0, sb.length());
+         for (String str : strs3) {
+        	 sb.append(str);
+		}
+         
+		 System.out.println(sb);
 	}
 
 }
