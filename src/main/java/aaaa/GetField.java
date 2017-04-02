@@ -5,6 +5,7 @@ public static void main(String[] args) {
 	Foo foo = new Foo();
 boom(55);
 	System.out.println(foo.att);
+	System.out.println(foo.att);
 
 }
 public static int boom(int i){
